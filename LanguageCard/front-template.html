@@ -1,0 +1,37 @@
+<!-- Font Awesome Free's Cheatsheet: https://fontawesome.com/cheatsheet (load all styles) -->
+<script src="_fontawesome-all.js"></script>
+
+<div class="container center" style="max-width: 90%; margin: auto;">
+    <span id="english" class="large" style="display: none;">{{Target}}</span>
+    <script>
+        function toggleHint() {
+          var x = document.getElementById("english");
+          if (x.style.display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "none";
+          }
+        }
+    </script>
+    {{#Sound}}
+    <span class="sound">{{Sound}}</span>{{/Sound}} {{#Replay}}
+    <!-- Sets or returns whether the audio should start over again when finished -->
+    <audio id="sound-repeat-control" controls loop class="margin-top" style="display: none; width: 100%; margin:0 auto .25rem auto;">
+        <source src="{{Replay}}">
+    </audio>
+    <script>
+        function toggleRepeat() {
+          var x = document.getElementById("sound-repeat-control");
+          if (x.style.display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "none";
+          }
+        }
+    </script>
+    {{/Replay}}
+</div>
+
+<div class="icon-bar hinter">
+    <a href="#" onclick="toggleHint()"><i class="far fa-comment-dots"></i></a>
+</div>

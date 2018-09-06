@@ -1,0 +1,169 @@
+html {
+    box-sizing: border-box
+}
+
+*, *:before, *:after {
+    box-sizing: inherit
+}
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+}
+
+body {
+    margin: 0
+}
+
+html, body {
+    font-family: Verdana, sans-serif;
+    font-size: 15px;
+    line-height: 1.75rem;
+}
+
+html {
+    overflow-x: hidden
+}
+
+a {
+    color: inherit
+}
+
+sub, sup {
+    font-size: 80%;
+    display: inline-block;
+    line-height: 1.3rem;
+}
+
+.container:after, .container:before, .panel:after, .panel:before {
+    content: "";
+    display: table;
+    clear: both
+}
+
+.container, .panel {
+    padding: 0.01em 16px
+}
+
+.panel {
+    margin-top: 16px;
+    margin-bottom: 16px
+}
+
+.padding {
+    padding: 8px 16px !important
+}
+
+.margin-top {
+    margin-top: 16px !important
+}
+
+.center {
+    text-align: center !important;
+}
+
+.large {
+    font-size: 20px !important
+}
+
+.small {
+    font-size: 12px !important
+}
+
+.round {
+    border-radius: 4px
+}
+
+.white {
+    color: #000 !important;
+    background-color: #fff !important
+}
+
+.grey {
+    color: #000 !important;
+    background-color: #eee !important
+}
+
+.text-grey {
+    color: #eee !important
+}
+
+.card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    -webkit-box-align: stretch;
+    -webkit-box-pack: center;
+    -webkit-box-orient: vertical;
+    background-color: #fff;
+}
+
+.sound {
+    display: block;
+}
+
+.picture {
+    display: block;
+    margin: 15px 0;
+}
+
+.picture img {
+    max-height: 150px;
+}
+
+.tags {
+    line-height: 1rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-right: 10px;
+    z-index: 0;
+}
+
+.icon-bar {
+    position: absolute;
+    top: 75px;
+    right: 0;
+}
+
+.icon-bar.hinter {
+    top: 30px;
+}
+
+.icon-bar a {
+    width: 40px;
+    height: 40px;
+    display: block;
+    text-align: center;
+    padding: 5px;
+    margin: 5px 0;
+    font-size: 30px;
+    line-height: 1rem;
+}
+
+.replaybutton span {
+    padding: 0;
+    margin: .75rem .25rem 0 .25rem;
+    border: 2px solid #000;
+    border-radius: 4px;
+}
+
+.replaybutton span img, .replaybutton span svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    min-width: 1rem;
+    min-height: 1rem;
+    display: block;
+    fill: #000;
+}
+
+hr {
+    width: 80%;
+    height: 0;
+    margin: 1.75rem auto 1.5rem auto;
+    box-sizing: content-box;
+    overflow: visible;
+    border: 0;
+    border-top: 1px solid #eee;
+}
