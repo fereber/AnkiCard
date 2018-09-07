@@ -6,21 +6,30 @@ Show video with subtitle on Anki cards.
 
 ## Fields
 
-1.  Video Title (Sort by this field in browser)
-2.  Video File Name
-3.  Poster File Name
-4.  Target Subtitle Content
-5.  Native Subtitle Content
-6.  Notes
+ 1. Video Title (Sort by this field in browser)
+ 2. Video File Name
+ 3. Target Subtitle Content
+ 4. Native Subtitle Content
 
-## Why don't I use the default media player?
-
-Because of subtitles an statistics.
+## Default media player
 
 If I use this syntax in my Anki cards: `[sound:video_file_name.webm]`, it's works fine! But there aren't subtitles and the learning time will be false in my statistics.
 
-## Anki file size limit (during synchronization on AnkiWeb)
+## Video Subtitling with Web Video Text Tracks (WebVTT) format
 
-"At the moment there are [no limits on the size of your media](https://anki.tenderapp.com/kb/anki-ecosystem/are-there-limits-on-file-sizes-on-ankiweb), although the size of individual media files is limited to 100MB."
+I am using the 'Subtitle Content' field for subtitles, in the following example:
 
-I use video files largen than 100MB, so Anki has to synchronize only note type with subtitles.
+    WEBVTT
+
+    00:08.000 --> 00:14.000
+    Hello!
+    This is a subtitle.
+
+    00:15.000 --> 00:12.000
+    Ok.
+
+## Anki file size limit
+
+"At the moment there are [no limits on the size of your media](https://anki.tenderapp.com/kb/anki-ecosystem/are-there-limits-on-file-sizes-on-ankiweb), although the **size of individual** media files is limited to 100MB."
+
+I use video files larger than 100 MB, so the Anki only synchronizes the note type with subtitles and not video files.
