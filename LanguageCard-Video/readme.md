@@ -32,4 +32,4 @@ I am using the 'Subtitle Content' field for subtitles, in the following example:
 
 "At the moment there are [no limits on the size of your media](https://anki.tenderapp.com/kb/anki-ecosystem/are-there-limits-on-file-sizes-on-ankiweb), although the **size of individual** media files is limited to 100MB."
 
-I use video files larger than 100 MB, so the Anki only synchronizes the note type with subtitles and not video files.
+I use video files larger than 100 MB, so the Anki only synchronizes the note type with subtitles and **not video files**. (You have to copy the video file to Anki's media folder.)
