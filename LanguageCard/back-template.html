@@ -5,27 +5,32 @@
 <div class="container center" style="max-width: 90%; margin: auto;">
 	<span class="large field">{{Native}}{{^Native}}{{Target}}{{/Native}}</span>
 	{{#Picture}}
-	<span class="picture">{{Picture}}</span>{{/Picture}}
+		<span class="picture">{{Picture}}</span>
+	{{/Picture}}
 </div>
 
 {{#Tags}}
-<p class="tags small white text-grey">{{Tags}}</p>{{/Tags}} {{#Notes}}
-<div class="container" style="max-width: 90%; margin: auto;">
-	<div id="notes" class="panel grey padding round" style="display:none">{{Notes}}</div>
-</div>
-<script>
-	function toggleNotes() {
-	  var x = document.getElementById("notes");
-	  if (x.style.display === "none") {
-	    x.style.display = "block";
-	  } else {
-	    x.style.display = "none";
-	  }
-	}
-</script>
+	<p class="tags small white text-grey">{{Tags}}</p>
+{{/Tags}}
+{{#Notes}}
+	<div class="container" style="max-width: 90%; margin: auto;">
+		<div id="notes" class="panel grey padding round" style="display:none">{{Notes}}</div>
+	</div>
+	<script>
+		function toggleNotes() {
+		  var x = document.getElementById("notes");
+		  if (x.style.display === "none") {
+		    x.style.display = "block";
+		  } else {
+		    x.style.display = "none";
+		  }
+		}
+	</script>
 {{/Notes}}
 
 <div class="icon-bar">
-	{{#Replay}} <a href="#" onclick="toggleRepeat()"><i class="far fa-play-circle"></i></a>{{/Replay}} {{#Notes}}
-	<a href="#" onclick="toggleNotes()"><i class="far fa-question-circle"></i></a>{{/Notes}}
+	{{#Replay}} <a href="#" onclick="toggleRepeat()"><i class="far fa-play-circle"></i></a>{{/Replay}}
+	{{#Notes}}
+		<a href="#" onclick="toggleNotes()"><i class="far fa-question-circle"></i></a>
+	{{/Notes}}
 </div>
