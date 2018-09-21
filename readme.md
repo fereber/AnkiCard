@@ -2,27 +2,44 @@
 
 Templates and styles of my Anki cards.
 
-![Screenshots](https://raw.githubusercontent.com/Ber-Fer/AnkiCard/master/LanguageCard/screenshots/screenshot_01.jpg)
+<figure style="float: left; width:32%; padding-right:1%; margin:0;">
+  <img style="border:1px solid #eee;" src="https://github.com/Ber-Fer/AnkiCard/tree/master//screenshots/language-card.gif">
+  <figcaption style="text-align: center; font-size: 75%;">Language Card</figcaption>
+</figure>
+
+<figure style="float: left; width:32%; padding-right:1%; margin:0;">
+  <img style="border:1px solid #eee;" src="https://github.com/Ber-Fer/AnkiCard/tree/master/screenshots/screenshot_10.jpg">
+  <figcaption style="text-align: center; font-size: 75%;">Video Card (with subtitles)</figcaption>
+</figure>
+
+<figure style="float: left; width:32%; padding-right:1%; margin:0;">
+  <img style="border:1px solid #eee;" src="https://github.com/Ber-Fer/AnkiCard/tree/master/screenshots/screenshot_09.jpg">
+  <figcaption style="text-align: center; font-size: 75%;">Simple Card</figcaption>
+</figure>
+
+<br style="clear: both">
+
+[More sreenshoots...](https://github.com/Ber-Fer/AnkiCard/tree/master/screenshots/)
 
 ## Type of cards
 
 ### Simple card
 
-#### Fields
+**Fields:**
 
 1.  Front (Sort by this field in browser)
 2.  Back
 
 ### Language card
 
-**It's only supported on AnkiDroid!**
+It's only supported on AnkiDroid!
 
-#### Fields
+**Fields:**
 
 1.  Target (Sort by this field in browser)
 2.  Native
 3.  Sound
-4.  Reply (It's only supported on AnkiDroid!)
+4.  Reply
 5.  Picture
 6.  Notes
 
@@ -30,9 +47,9 @@ Templates and styles of my Anki cards.
 
 Show video with subtitle on Anki cards.
 
-**It's only supported on AnkiDroid!**
+It's only supported on AnkiDroid!
 
-#### Fields
+**Fields:**
 
 1.  Video Title (Sort by this field in browser)
 2.  Video File Name
