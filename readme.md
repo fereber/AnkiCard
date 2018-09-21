@@ -3,23 +3,23 @@
 Templates and styles of my Anki cards.
 
 <figure style="float: left; width:32%; padding-right:1%; margin:0;">
-  <img style="border:1px solid #eee;" src="https://github.com/Ber-Fer/AnkiCard/tree/master//screenshots/language-card.gif">
+  <img style="border:1px solid #eee;" src="https://raw.githubusercontent.com/Ber-Fer/AnkiCard/master/screenshots/language-card.gif">
   <figcaption style="text-align: center; font-size: 75%;">Language Card</figcaption>
 </figure>
 
 <figure style="float: left; width:32%; padding-right:1%; margin:0;">
-  <img style="border:1px solid #eee;" src="https://github.com/Ber-Fer/AnkiCard/tree/master/screenshots/screenshot_10.jpg">
+  <img style="border:1px solid #eee;" src="https://raw.githubusercontent.com/Ber-Fer/AnkiCard/master/screenshots/screenshot_10.jpg">
   <figcaption style="text-align: center; font-size: 75%;">Video Card (with subtitles)</figcaption>
 </figure>
 
 <figure style="float: left; width:32%; padding-right:1%; margin:0;">
-  <img style="border:1px solid #eee;" src="https://github.com/Ber-Fer/AnkiCard/tree/master/screenshots/screenshot_09.jpg">
+  <img style="border:1px solid #eee;" src="https://raw.githubusercontent.com/Ber-Fer/AnkiCard/master/screenshots/screenshot_09.jpg">
   <figcaption style="text-align: center; font-size: 75%;">Simple Card</figcaption>
 </figure>
 
 <br style="clear: both">
 
-[More sreenshoots...](https://github.com/Ber-Fer/AnkiCard/tree/master/screenshots/)
+[More sreenshots...](https://github.com/Ber-Fer/AnkiCard/tree/master/screenshots)
 
 ## Type of cards
 
