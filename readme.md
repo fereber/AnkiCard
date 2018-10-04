@@ -1,55 +1,81 @@
 # Anki Cards
 
-Templates and styles of my Anki cards.
+Template and style of Anki cards.
 
-| ![Language card](https://raw.githubusercontent.com/Ber-Fer/AnkiCard/master/screenshots/language-card.gif) | ![Video card](https://raw.githubusercontent.com/Ber-Fer/AnkiCard/master/screenshots/screenshot_10.jpg) | ![Simple card](https://raw.githubusercontent.com/Ber-Fer/AnkiCard/master/screenshots/screenshot_09.jpg) |
-| :-------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------: |
-|                                               Language card                                               |                                               Video card                                               |                                               Simple card                                               |
+![Language card](https://raw.githubusercontent.com/Ber-Fer/AnkiCard/master/screenshot.gif)
 
-[More sreenshots...](https://github.com/Ber-Fer/AnkiCard/tree/master/screenshots)
-
-## Type of cards
-
-### Simple card
-
-**Fields:**
+## Fields
 
 1.  Front (Sort by this field in browser)
 2.  Back
+3.  Picture
+4.  Sound
+5.  Audio File Name
+6.  Video File Name\*
+7.  Content Front\*
+8.  Content Back
+9.  Notes
 
-### Language card
+### Default
 
-It's only supported on AnkiDroid!
+Easy-to-read cards with toggle switch fields (show/hide).
 
-**Fields:**
+| Field             | Comment                                        |
+| ----------------- | ---------------------------------------------- |
+| **Front**         | **expression here; sort by this field**        |
+| **Back**          | **expression translation**                     |
+| Picture           | optional; `<img src="story_audio_file.jpg" />` |
+| Sound             | optional; `[sound:story_audio_file.mp3]`       |
+| Audio File Name   | optional; `story_audio_file.mp3`               |
+| Video File Name\* | _leave blank!_                                 |
+| Content Front\*   | _leave blank!_                                 |
+| Content Back      | no displayed;                                  |
+| Notes             | optional;                                      |
 
-1.  Target (Sort by this field in browser)
-2.  Native
-3.  Sound
-4.  Reply
-5.  Picture
-6.  Notes
+The following fields are available to show/hide content:
 
-### Video card
+-   Front (to use the note as a reverse card as well)
+-   Front Type  (to check if you are correct)
+-   Audio File Name (to replay the audio)
+-   Notes (megjegyzések megtekintéséhez)
 
-Show video with subtitle on Anki cards.
+### Story
 
-It's only supported on AnkiDroid!
+Fill out the field of `Content Front*`, this format is ideal for longer content.
 
-**Fields:**
+**Note:** It's only supported on AnkiDroid!
 
-1.  Video Title (Sort by this field in browser)
-2.  Video File Name
-3.  Target Subtitle Content
-4.  Native Subtitle Content
+| Field               | Comment                                           |
+| ------------------- | ------------------------------------------------- |
+| **Front**           | **title of story; sort by this field**            |
+| Back                | optional; eg. the front translation               |
+| Picture             | optional; `<img src="story_audio_file.jpg" />`    |
+| Sound               | no displayed;         |
+| Audio File Name     | optional; `story_audio_file.mp3`                  |
+| Video File Name\*   | _leave blank!_                                    |
+| **Content Front\*** | **if it's not empty, the card become story card** |
+| Content Back        | optional; eg. the front content translation       |
+| Notes               | optional;                                         |
 
-#### Default media player
+### Video
 
-If you use this syntax in Anki cards: `[sound:video_file_name.webm]`, it's works fine! But there aren't subtitles and the learning time will be false in statistics.
+If you use this syntax in Anki cards: `[sound:video_file_name.webm]`, it's works fine! But there aren't subtitles and the learning time will be false in statistics. Use `_video_file_name.webm` in the Video File Name\* field instead of `[sound:video_file_name.webm]` syntax.
 
-#### Video Subtitling with Web Video Text Tracks (WebVTT) format
+**Note:** It's only supported on AnkiDroid!
 
-The 'Subtitle Content' field for subtitles, in the following example:
+| Field                 | Comment                                             |
+| --------------------- | --------------------------------------------------- |
+| **Front**             | **title of video; sort by this field**              |
+| Back                  | no displayed                                        |
+| Picture               | no displayed                                        |
+| Sound                 | no displayed                                        |
+| Audio File Name       | no displayed                                        |
+| **Video File Name\*** | **if it's _not_ empty, the card become video card** |
+| **Content Front\***   | **optional; subtitle 1 come here**                  |
+| **Content Back**      | **optional; subtitle 2 come here**                  |
+| Notes                 | no displayed;                                       |
+
+Use the `Content Front*` and `Content Back` fields for subtitles, in the following example, Video Subtitling with Web Video Text Tracks (WebVTT) format:
 
     WEBVTT
 
@@ -59,8 +85,6 @@ The 'Subtitle Content' field for subtitles, in the following example:
 
     00:15.000 --> 00:12.000
     Ok.
-
-#### Anki file size limit
 
 "At the moment there are [no limits on the size of your media](https://anki.tenderapp.com/kb/anki-ecosystem/are-there-limits-on-file-sizes-on-ankiweb), although the **size of individual** media files is limited to 100MB."
 
