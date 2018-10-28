@@ -1,55 +1,51 @@
 {{^Video File Name*}}
 <div class="container center" style="max-width: 100%; margin: auto;">
 
-    <div class="large {{^Sound}}panel{{/Sound}}" {{^Content Front*}}{{#Sound}}id="front" style="display:none"{{/Sound}}{{/Content Front*}}>
+    <div class="large {{^Sound}}panel{{/Sound}}" {{^Story* / Subtitle 1}}{{#Sound}}id="front" style="display:none"{{/Sound}}{{/Story* / Subtitle 1}}>
         {{Front}}
     </div>
 
-    {{#Content Front*}}
+    {{#Story* / Subtitle 1}}
         {{#Picture}}
             <figure class="panel">{{Picture}}</figure>
         {{/Picture}}
-    {{/Content Front*}}
+    {{/Story* / Subtitle 1}}
 
-    {{^Content Front*}}
+    {{^Story* / Subtitle 1}}
         {{#Sound}}
           <div class="panel">
               {{Sound}}
           </div>
         {{/Sound}}
-    {{/Content Front*}}
+    {{/Story* / Subtitle 1}}
 
     {{#Audio File Name}}
         <div class="center panel" id="stickyHeader">
-            <audio {{^Content Front*}}id="audio-control" style="display: none;"{{/Content Front*}} controls loop class="small text-grenadine">
+            <audio {{^Story* / Subtitle 1}}id="audio-control" style="display: none;"{{/Story* / Subtitle 1}} controls loop class="small text-grenadine">
                 <source src="{{Audio File Name}}">
                 Your browser does not support the audio element.
             </audio>
         </div>
     {{/Audio File Name}}
 
-    {{^Content Front*}}
+    {{^Story* / Subtitle 1}}
         <div id="type-control" class="panel" style="display: none">
             {{type:Front}}
         </div>
-    {{/Content Front*}}
-
-    {{#Content Front*}}
-        <div class="panel left newline">{{Content Front*}}</div>
-    {{/Content Front*}}
+    {{/Story* / Subtitle 1}}
 </div>
 
 {{#Tags}}
     <div class="tags xsmall text-grey">{{Tags}}</div>
 {{/Tags}}
 
-{{^Content Front*}}
+{{^Story* / Subtitle 1}}
     <div class="icon-bar">
         {{#Sound}}<a href="#" onclick="toggleFront()"><i class="far fa-comment-dots"></i></a>{{/Sound}}
         {{#Audio File Name}}<a href="#" onclick="toggleAudio()"><i class="far fa-play-circle"></i></a>{{/Audio File Name}}
         {{#Sound}}<a href="#" onclick="toggleType()"><i class="fa fa-pencil-alt"></i></a>{{/Sound}}
     </div>
-{{/Content Front*}}
+{{/Story* / Subtitle 1}}
 
 <!-- Font Awesome Free's Cheatsheet: https://fontawesome.com/cheatsheet (load all styles) -->
 <script src="_fontawesome-all.js"></script>
@@ -89,13 +85,13 @@
         x.style.display = "none";
       }
     }
-
+    {{#Audio File Name}}
     window.onscroll = function () {
       stickyFunction()
     };
 
     var header = document.getElementById("stickyHeader");
-    var sticky = header.offsetTop;
+    //var sticky = header.offsetTop;
 
     function stickyFunction() {
       if (window.pageYOffset > sticky) {
@@ -104,6 +100,7 @@
         header.classList.remove("sticky");
       }
     }
+    {{/Audio File Name}}
 </script>
 {{/Video File Name*}}
 
@@ -118,18 +115,18 @@
 </div>
 
 <!-- Content for Video Subtitle 2 -->
-{{#Content Back}}
+{{#Subtitle 2}}
     <script type="text/vtt" data-label="Subtitle 2" data-lang="Sub2">
-        {{Content Back}}
+        {{Subtitle 2}}
     </script>
-{{/Content Back}}
+{{/Subtitle 2}}
 
 <!-- Content for Video Subtitle 1 -->
-{{#Content Front*}}
+{{#Story* / Subtitle 1}}
     <script type="text/vtt" data-label="Subtitle 1" data-lang="Sub1">
-        {{Content Front*}}
+        {{Story* / Subtitle 1}}
     </script>
-{{/Content Front*}}
+{{/Story* / Subtitle 1}}
 
 <script>
     function parse_timestamp(s) {

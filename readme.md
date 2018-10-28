@@ -2,7 +2,7 @@
 
 Template and style of Anki cards.
 
-![Language card](https://raw.githubusercontent.com/Ber-Fer/AnkiCard/master/screenshot.gif)
+![Multifunctional Card](https://raw.githubusercontent.com/Ber-Fer/AnkiCard/master/screenshot.gif)
 
 ## Fields
 
@@ -12,70 +12,68 @@ Template and style of Anki cards.
 4.  Sound
 5.  Audio File Name
 6.  Video File Name\*
-7.  Content Front\*
-8.  Content Back
+7.  Story\* / Subtitle 1
+8.  Subtitle 2
 9.  Notes
 
 ### Default
 
 Easy-to-read cards with toggle switch fields (show/hide).
 
-| Field             | Comment                                        |
-| ----------------- | ---------------------------------------------- |
-| **Front**         | **expression here; sort by this field**        |
-| **Back**          | **expression translation**                     |
-| Picture           | optional; `<img src="story_audio_file.jpg" />` |
-| Sound             | optional; `[sound:story_audio_file.mp3]`       |
-| Audio File Name   | optional; `story_audio_file.mp3`               |
-| Video File Name\* | _leave blank!_                                 |
-| Content Front\*   | _leave blank!_                                 |
-| Content Back      | no displayed;                                  |
-| Notes             | optional;                                      |
+| Field                | Comment                                        |
+| -------------------- | ---------------------------------------------- |
+| **Front**            | **expression here; sort by this field**        |
+| **Back**             | **expression translation**                     |
+| Picture              | optional; `<img src="story_audio_file.jpg" />` |
+| Sound                | optional; `[sound:story_audio_file.mp3]`       |
+| Audio File Name      | optional; `story_audio_file.mp3`               |
+| Video File Name\*    | _leave blank!_                                 |
+| Story\* / Subtitle 1 | _leave blank!_                                 |
+| Subtitle 2           | no displayed;                                  |
+| Notes                | optional;                                      |
 
 The following fields are available to show/hide content:
 
 -   Front (to use the note as a reverse card as well)
 -   Front Type  (to check if you are correct)
 -   Audio File Name (to replay the audio)
--   Notes (megjegyzések megtekintéséhez)
+-   Notes (show your comments)
+
+**Note:** Playing video and audio files (this way) are only supported with AnkiDroid.
 
 ### Story
 
-Fill out the field of `Content Front*`, this format is ideal for longer content.
+Fill out the field of `Story\* / Subtitle 1*`, so the carrd is suitable for longer content as well.
 
-**Note:** It's only supported on AnkiDroid!
-
-| Field               | Comment                                           |
-| ------------------- | ------------------------------------------------- |
-| **Front**           | **title of story; sort by this field**            |
-| Back                | optional; eg. the front translation               |
-| Picture             | optional; `<img src="story_audio_file.jpg" />`    |
-| Sound               | no displayed;         |
-| Audio File Name     | optional; `story_audio_file.mp3`                  |
-| Video File Name\*   | _leave blank!_                                    |
-| **Content Front\*** | **if it's not empty, the card become story card** |
-| Content Back        | optional; eg. the front content translation       |
-| Notes               | optional;                                         |
+| Field                    | Comment                                           |
+| ------------------------ | ------------------------------------------------- |
+| **Front**                | **title of story; sort by this field**            |
+| Back                     | optional; eg. the front translation               |
+| Picture                  | optional; `<img src="story_audio_file.jpg" />`    |
+| Sound                    | no displayed;                                     |
+| Audio File Name          | optional; `story_audio_file.mp3`                  |
+| Video File Name\*        | _leave blank!_                                    |
+| **Story\* / Subtitle 1** | **if it's not empty, the card become story card** |
+| Subtitle 2               | optional; eg. the front content translation       |
+| Notes                    | optional;                                         |
 
 ### Video
 
 If you use this syntax in Anki cards: `[sound:video_file_name.webm]`, it's works fine! But there aren't subtitles and the learning time will be false in statistics. Use `_video_file_name.webm` in the Video File Name\* field instead of `[sound:video_file_name.webm]` syntax.
 
-**Note:** It's only supported on AnkiDroid!
+| Field                      | Comment                                             |
+| -------------------------- | --------------------------------------------------- |
+| **Front**                  | **title of video; sort by this field**              |
+| Back                       | no displayed                                        |
+| Picture                    | no displayed                                        |
+| Sound                      | no displayed                                        |
+| Audio File Name            | no displayed                                        |
+| **Video File Name\***      | **if it's _not_ empty, the card become video card** |
+| **Story\* / Subtitle 1**   | **optional; subtitle 1 come here**                  |
+| **Subtitle 2**             | **optional; subtitle 2 come here**                  |
+| Notes                      | no displayed;                                       |
 
-| Field                 | Comment                                             |
-| --------------------- | --------------------------------------------------- |
-| **Front**             | **title of video; sort by this field**              |
-| Back                  | no displayed                                        |
-| Picture               | no displayed                                        |
-| Sound                 | no displayed                                        |
-| Audio File Name       | no displayed                                        |
-| **Video File Name\*** | **if it's _not_ empty, the card become video card** |
-| **Content Front\***   | **optional; subtitle 1 come here**                  |
-| **Content Back**      | **optional; subtitle 2 come here**                  |
-| Notes                 | no displayed;                                       |
-
-Use the `Content Front*` and `Content Back` fields for subtitles, in the following example, Video Subtitling with Web Video Text Tracks (WebVTT) format:
+Use the `Story\* / Subtitle 1` and `Subtitle 2` fields for subtitles, in the following example, Video Subtitling with Web Video Text Tracks (WebVTT) format:
 
     WEBVTT
 

@@ -20,6 +20,7 @@ html, body {
     font-family: Verdana, sans-serif;
     font-size: 18px;
     line-height: 1.5rem;
+    background-color: #fff;
 }
 
 html {
@@ -215,6 +216,21 @@ input {
     width: 20px;
     min-width: 20px;
     min-height: 20px;
+}
+
+.newline .replaybutton span svg{
+    height: 14px;
+    width: 14px;
+    min-width: 14px;
+    min-height: 14px;
+}
+
+.newline .replaybutton span {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0px;
+    border: 1px solid #000;
+    border-radius: 3px;
 }
 
 .replaybutton span img {
