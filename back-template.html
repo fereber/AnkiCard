@@ -2,135 +2,123 @@
 {{^Video File Name*}}
 <div class="container center" style="max-width: 100%; margin: auto;">
 
-    <div class="large {{^Sound}}panel{{/Sound}}" {{^Story* / Subtitle 1}}{{#Sound}}id="front" style="display:none"{{/Sound}}{{/Story* / Subtitle 1}}>
-        {{Front}}
+{{#Picture}}
+    {{#Story* / Subtitle 1}}<figure class="panel">{{Picture}}</figure>{{/Story* / Subtitle 1}}
+    {{^Story* / Subtitle 1}}<div class="panel">{{Picture}}</div>{{/Story* / Subtitle 1}}
+{{/Picture}}
+
+{{^Story* / Subtitle 1}}
+    <div class="large panel" {{#Sound}}id="front" style="display:none"{{/Sound}}>{{Front}}</div>
+    {{#Sound}}<div class="large panel" id="front2" style="display: block;"><i class="fa fa-ellipsis-h"></i></div>{{/Sound}}
+{{/Story* / Subtitle 1}}
+
+{{#Audio File Name}}
+    <div class="center panel" id="stickyHeader">
+        {{#Story* / Subtitle 1}}<div class="large padding">{{Front}}</div>{{/Story* / Subtitle 1}}
+        <audio {{^Story* / Subtitle 1}}id="audio-control" style="display: none;"{{/Story* / Subtitle 1}} controls loop class="small text-grenadine">
+            <source src="{{Audio File Name}}">
+            Your browser does not support the audio element.
+        </audio>
     </div>
+{{/Audio File Name}}
 
-    {{#Story* / Subtitle 1}}
-        {{#Picture}}
-            <figure class="panel">{{Picture}}</figure>
-        {{/Picture}}
-    {{/Story* / Subtitle 1}}
+{{^Story* / Subtitle 1}}
+    <div id="type-control" class="panel" style="display: none; margin: 0 10px;">{{type:Front}}</div>
+{{/Story* / Subtitle 1}}
 
-    {{^Story* / Subtitle 1}}
-        {{#Sound}}
-          <div class="panel">
-              {{Sound}}
-          </div>
-        {{/Sound}}
-    {{/Story* / Subtitle 1}}
+    <hr class="text-grey">
 
-    {{#Audio File Name}}
-        <div class="center panel" id="stickyHeader">
-            <audio {{^Story* / Subtitle 1}}id="audio-control" style="display: none;"{{/Story* / Subtitle 1}} controls loop class="small text-grenadine">
-                <source src="{{Audio File Name}}">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
-    {{/Audio File Name}}
+{{#Back}}
+    <div class="large panel">{{Back}}</div>
+{{/Back}}
 
-    {{^Story* / Subtitle 1}}
-        <div id="type-control" class="panel" style="display: none">
-            {{type:Front}}
-        </div>
-    {{/Story* / Subtitle 1}}
+{{#Story* / Subtitle 1}}
+    <div class="panel left newline">{{Story* / Subtitle 1}}</div>
+{{/Story* / Subtitle 1}}
 
-    <hr>
-
-    {{#Back}}
-        <div class="large {{^Picture}}panel{{/Picture}}">
-            {{Back}}
-        </div>
-    {{/Back}}
-
-    {{^Story* / Subtitle 1}}
-        {{#Picture}}
-            <div class="panel">{{Picture}}</div>
-        {{/Picture}}
-    {{/Story* / Subtitle 1}}
-
-    {{#Story* / Subtitle 1}}
-        <div class="panel left newline">{{Story* / Subtitle 1}}</div>
-    {{/Story* / Subtitle 1}}
-
-    {{#Notes}}
-        <div {{^Story* / Subtitle 1}}id="notes" style="display: none;"{{/Story* / Subtitle 1}} class="panel left newline padding round small grey">{{Notes}}</div>
-    {{/Notes}}
 </div>
+
+{{^Story* / Subtitle 1}}
+    <div class="icon-bar">
+        {{#Sound}}{{Sound}}{{/Sound}}
+        {{#Sound}}<a title="Show Content of Front Side" href="#" onclick="toggleFront()"><i class="far fa-comment-dots"></i></a>{{/Sound}}
+        {{#Audio File Name}}<a title="Show Audio Player" href="#" onclick="toggleAudio()"><i class="fas fa-volume-up"></i></a>{{/Audio File Name}}
+        {{#Sound}}<a title="Spell Checking" href="#" onclick="toggleType()"><i class="far fa-check-circle"></i></a>{{/Sound}}
+        {{#Notes}}<a title="See More Info" href="#" onclick="toggleNotes()"><i class="far fa-question-circle"></i></a>{{/Notes}}
+    </div>
+{{/Story* / Subtitle 1}}
+
+{{#Notes}}
+    <div {{^Story* / Subtitle 1}}id="notes" style="display: none; margin: 0 25px; padding: 12px 8px 8px 8px;"{{/Story* / Subtitle 1}} class="panel left newline padding round small grey">{{Notes}}</div>
+{{/Notes}}
 
 {{#Tags}}
     <div class="tags xsmall text-grey">{{Tags}}</div>
 {{/Tags}}
 
-{{^Story* / Subtitle 1}}
-    <div class="icon-bar">
-        {{#Sound}}<a href="#" onclick="toggleFront()"><i class="far fa-comment-dots"></i></a>{{/Sound}}
-        {{#Audio File Name}}<a href="#" onclick="toggleAudio()"><i class="far fa-play-circle"></i></a>{{/Audio File Name}}
-        {{#Sound}}<a href="#" onclick="toggleType()"><i class="fa fa-pencil-alt"></i></a>{{/Sound}}
-        {{#Notes}}<a href="#" onclick="toggleNotes()"><i class="far fa-question-circle"></i></a>{{/Notes}}
-    </div>
-{{/Story* / Subtitle 1}}
-
-
 <!-- Font Awesome Free's Cheatsheet: https://fontawesome.com/cheatsheet (load all styles) -->
 <script src="_fontawesome-all.js"></script>
 <script>
-    function toggleFront() {
-      var x = document.getElementById("front");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
-    }
+function toggleFront() {
+  var x = document.getElementById("front");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+  var x = document.getElementById("front2");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
 
-    function toggleAudio() {
-      var x = document.getElementById("audio-control");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
-    }
+function toggleAudio() {
+  var x = document.getElementById("audio-control");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
 
-    function toggleType() {
-      var x = document.getElementById("type-control");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
-    }
+function toggleType() {
+  var x = document.getElementById("type-control");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
 
-    function toggleNotes() {
-      var x = document.getElementById("notes");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
-    }
-    {{#Audio File Name}}
-    window.onscroll = function () {
-      stickyFunction()
-    };
+function toggleNotes() {
+  var x = document.getElementById("notes");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
 
-    var header = document.getElementById("stickyHeader");
-    var sticky = header.offsetTop;
+window.onscroll = function () {
+  stickyFunction()
+};
 
-    function stickyFunction() {
-      if (window.pageYOffset > sticky) {
-        header.classList.add("sticky");
-      } else {
-        header.classList.remove("sticky");
-      }
-    }
-    {{/Audio File Name}}
+var header = document.getElementById("stickyHeader");
+var sticky = header.offsetTop;
+
+function stickyFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
 </script>
 {{/Video File Name*}}
 
 {{#Video File Name*}}
-<!-- Display as a Title of Video -->
 <div class="center">
     <video controls preload="metadata" src="{{Video File Name*}}" class="small text-grenadine">
         Your browser does not support the video element.
@@ -138,88 +126,84 @@
     <div class="small">{{Front}}</div>
 </div>
 
-<!-- Content for Video Subtitle 2 -->
 {{#Subtitle 2}}
-    <script type="text/vtt" data-label="Subtitle 2" data-lang="Sub2">
-        {{Subtitle 2}}
-    </script>
+    <!-- Content for Video Subtitle 2 -->
+    <script type="text/vtt" data-label="Subtitle 2" data-lang="Sub2">{{Subtitle 2}}</script>
 {{/Subtitle 2}}
 
-<!-- Content for Video Subtitle 1 -->
 {{#Story* / Subtitle 1}}
-    <script type="text/vtt" data-label="Subtitle 1" data-lang="Sub1">
-        {{Story* / Subtitle 1}}
-    </script>
+    <!-- Content for Video Subtitle 1 -->
+    <script type="text/vtt" data-label="Subtitle 1" data-lang="Sub1">{{Story* / Subtitle 1}}</script>
 {{/Story* / Subtitle 1}}
 
 <script>
-    function parse_timestamp(s) {
-      var match = s.match(/^(?:([0-9]+):)?([0-5][0-9]):([0-5][0-9](?:[.,][0-9]{0,3})?)/);
-      if (match == null) {
-        throw 'Invalid timestamp format: ' + s;
-      }
-      var hours = parseInt(match[1] || "0", 10);
-      var minutes = parseInt(match[2], 10);
-      var seconds = parseFloat(match[3].replace(',', '.'));
-      return seconds + 60 * minutes + 60 * 60 * hours;
-    }
+function parse_timestamp(s) {
+  var match = s.match(/^(?:([0-9]+):)?([0-5][0-9]):([0-5][0-9](?:[.,][0-9]{0,3})?)/);
+  if (match == null) {
+    throw 'Invalid timestamp format: ' + s;
+  }
+  var hours = parseInt(match[1] || "0", 10);
+  var minutes = parseInt(match[2], 10);
+  var seconds = parseFloat(match[3].replace(',', '.'));
+  return seconds + 60 * minutes + 60 * 60 * hours;
+}
 
-    function quick_and_dirty_vtt_or_srt_parser(vtt) {
-      var lines = vtt.trim().replace(/^[^\/]+\/\*!?/, "").replace(/\*\/[^\/]+$/, "");
-      lines = lines.replace(/<\/div><div>/g, "\n").replace(/<div>/g, "\n").replace(/<\/div>/g, "\n").replace(/<br \/>/g, "\n").replace(/<br>/g, "\n");
-      lines = lines.replace(/&nbsp;/g, " ").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&");
-      lines = lines.replace('\r\n', '\n');
-      lines = lines.split(/[\r\n]/).map(function (line) {
-        return line.trim();
-      });
-      var cues = [];
-      var start = null;
-      var end = null;
-      var payload = null;
-      for (var i = 0; i < lines.length; i++) {
-        if (lines[i].indexOf('-->') >= 0) {
-          var splitted = lines[i].split(/[ \t]+-->[ \t]+/);
-          if (splitted.length != 2) {
-            throw 'Error when splitting "-->": ' + lines[i];
-          }
-          start = parse_timestamp(splitted[0]);
-          end = parse_timestamp(splitted[1]);
-        } else if (lines[i] == '') {
-          if (start && end) {
-            var cue = new VTTCue(start, end, payload);
-            cues.push(cue);
-            start = null;
-            end = null;
-            payload = null;
-          }
-        } else if (start && end) {
-          if (payload == null) {
-            payload = lines[i];
-          } else {
-            payload += '\n' + lines[i];
-          }
-        }
+function quick_and_dirty_vtt_or_srt_parser(vtt) {
+  var lines = vtt.trim().replace(/^[^\/]+\/\*!?/, "").replace(/\*\/[^\/]+$/, "");
+  lines = lines.replace(/<\/div><div>/g, "\n").replace(/<div>/g, "\n").replace(/<\/div>/g, "\n").replace(/<br \/>/g, "\n").replace(/<br>/g, "\n");
+  lines = lines.replace(/&nbsp;/g, " ").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&");
+  lines = lines.replace('\r\n', '\n');
+  lines = lines.split(/[\r\n]/).map(function(line) {
+    return line.trim();
+  });
+  var cues = [];
+  var start = null;
+  var end = null;
+  var payload = null;
+  for (var i = 0; i < lines.length; i++) {
+    if (lines[i].indexOf('-->') >= 0) {
+      var splitted = lines[i].split(/[ \t]+-->[ \t]+/);
+      if (splitted.length != 2) {
+        throw 'Error when splitting "-->": ' + lines[i];
       }
+      start = parse_timestamp(splitted[0]);
+      end = parse_timestamp(splitted[1]);
+    } else if (lines[i] == '') {
       if (start && end) {
         var cue = new VTTCue(start, end, payload);
         cues.push(cue);
+        start = null;
+        end = null;
+        payload = null;
       }
-      return cues;
+    } else if (start && end) {
+      if (payload == null) {
+        payload = lines[i];
+      } else {
+        payload += '\n' + lines[i];
+      }
     }
+  }
+  if (start && end) {
+    var cue = new VTTCue(start, end, payload);
+    cues.push(cue);
+  }
+  return cues;
+}
 
-    function init() {
-      var video = document.querySelector('video');
-      var subtitles = document.getElementsByTagName('script');
-      Array.prototype.slice.call(subtitles)
-        .filter(node => node.type === "text/vtt")
-        .map(subtitle => {
-          var track = video.addTextTrack('subtitles', subtitle.dataset.label, subtitle.dataset.lang);
-          track.mode = "showing";
-          quick_and_dirty_vtt_or_srt_parser(subtitle.innerHTML).map(function (cue) {
-            track.addCue(cue);
-          });
-        });
-    }
-    init();
+function init() {
+  var video = document.querySelector('video');
+  var subtitles = document.getElementsByTagName('script');
+  Array.prototype.slice.call(subtitles)
+    .filter(node => node.type === "text/vtt")
+    .map(subtitle => {
+      var track = video.addTextTrack('subtitles', subtitle.dataset.label, subtitle.dataset.lang);
+      track.mode = "showing";
+      quick_and_dirty_vtt_or_srt_parser(subtitle.innerHTML).map(function(cue) {
+        track.addCue(cue);
+      });
+    });
+}
+init();
 </script>
 {{/Video File Name*}}

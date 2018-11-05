@@ -45,6 +45,7 @@ video, audio {
 
 audio::-webkit-media-controls-panel {
     background-color: #f1f1f1;
+    /*margin-top: 6px;*/
 }
 
 figure img {
@@ -142,8 +143,13 @@ img {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 8px 24px 0 24px;
+    padding: 6px 24px 8px 24px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.sticky .large {
+    font-size: 80%;
+    line-height: 1rem;
 }
 
 .sticky+.content {
@@ -153,18 +159,19 @@ img {
 .icon-bar {
     position: fixed;
     bottom: 80px;
-    right: 5px;
+    right: 2px;
 }
 
 .icon-bar a {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     display: block;
     text-align: center;
     padding: 5px;
     margin: 5px 0;
-    font-size: 30px;
+    font-size: 25px;
     line-height: 1rem;
+    /*opacity: .5;*/
 }
 
 hr {
@@ -179,10 +186,7 @@ hr {
 
 input {
     padding: 8px;
-    display: block;
-    border: none;
-    border: 1px solid #eee;
-    width: 100%;
+    border: 1px dashed #000;
 }
 
 /*
@@ -200,45 +204,33 @@ input {
     -webkit-box-orient: vertical;
 }
 
-.replaybutton span {
+.icon-bar .replaybutton span {
+    width: 24px;
+    height: 24px;
     display: inline-block;
-    vertical-align: middle;
-    padding: 0px;
-    border: 2px solid #000;
+    border: 2px solid;
     border-radius: 4px;
 }
 
-.replaybutton span svg {
-    stroke: none;
-    fill: black;
+.icon-bar .replaybutton span svg {
+    margin: -11px;
+    padding: 4px;
     display: block;
-    height: 20px;
-    width: 20px;
-    min-width: 20px;
-    min-height: 20px;
-}
-
-.newline .replaybutton span svg{
-    height: 14px;
-    width: 14px;
-    min-width: 14px;
-    min-height: 14px;
 }
 
 .newline .replaybutton span {
+    width: 16px;
+    height: 16px;
     display: inline-block;
-    vertical-align: top;
-    padding: 0px;
-    border: 1px solid #000;
-    border-radius: 3px;
+    border: 1px solid;
+    border-radius: 2px;
+    margin-bottom: 4px;
 }
 
-.replaybutton span img {
-    display: inline;
-    height: 20px;
-    width: 20px;
-    min-width: 20px;
-    min-height: 20px;
+.newline .replaybutton span svg {
+    margin: -14px;
+    padding: 7px;
+    display: block;
 }
 
 #typeans {
