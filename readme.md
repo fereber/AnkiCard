@@ -36,7 +36,7 @@ The following fields are available to show/hide content:
 
 -   Front (to use the note as a reverse card as well)
 -   Front Type  (to check if you are correct)
--   Audio File Name (to replay the audio)
+-   Audio File Name (to replay the audio with **adjustable playback speed** range - set audio to play in slow motion)
 -   Notes (show your comments)
 
 **Note:** Playing video and audio files (this way) are only supported with AnkiDroid.

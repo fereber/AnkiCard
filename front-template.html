@@ -1,6 +1,6 @@
 <div style="display: none">{{Front}}</div>
 {{^Video File Name*}}
-<div class="container center" style="max-width: 100%; margin: auto;">
+<div class="container center" style="max-width: 100%; {{^Story* / Subtitle 1}}margin: auto 20px;{{/Story* / Subtitle 1}}">
 
 {{#Picture}}
     {{#Story* / Subtitle 1}}<figure class="panel">{{Picture}}</figure>{{/Story* / Subtitle 1}}
@@ -8,23 +8,36 @@
 {{/Picture}}
 
 {{^Story* / Subtitle 1}}
-    <div class="large panel" {{#Sound}}id="front" style="display:none"{{/Sound}}>{{Front}}</div>
-    {{#Sound}}<div class="large panel" id="front2" style="display: block;"><i class="fa fa-ellipsis-h"></i></div>{{/Sound}}
+    <div class="large panel" {{#Sound}}id="frontPanel" style="display:none"{{/Sound}}>{{Front}}</div>
+    {{#Sound}}<div class="large panel" id="frontPanel2" style="display: block;"><i class="fa fa-ellipsis-h"></i></div>{{/Sound}}
+{{/Story* / Subtitle 1}}
+
+{{^Story* / Subtitle 1}}
+    <div id="typePanel" class="panel" style="display: none;">{{type:Front}}</div>
 {{/Story* / Subtitle 1}}
 
 {{#Audio File Name}}
-    <div class="center panel" id="stickyHeader">
-        {{#Story* / Subtitle 1}}<div class="large padding">{{Front}}</div>{{/Story* / Subtitle 1}}
-        <audio {{^Story* / Subtitle 1}}id="audio-control" style="display: none;"{{/Story* / Subtitle 1}} controls loop class="small text-grenadine">
-            <source src="{{Audio File Name}}">
-            Your browser does not support the audio element.
-        </audio>
+    <div class="panel">
+        <div id="audioPanel" {{^Story* / Subtitle 1}}style="display: none;"{{/Story* / Subtitle 1}}>
+            {{#Story* / Subtitle 1}}<div class="large padding">{{Front}}</div>{{/Story* / Subtitle 1}}
+            <audio id="audioControl" controls loop class="small text-grenadine">
+                <source src="{{Audio File Name}}">
+                Your browser does not support the audio element.
+            </audio>
+            <form>
+                <div class="range-slider small text-grey left">
+                    <input id="pbr" class="range-slider__range" type="range" value="1" min="0.1" max="2" step="0.1" >
+                    <span class="range-slider__value">Speed: <span id="currentPbr">1</span></span>
+                </div>
+            </form>
+        </div>
     </div>
 {{/Audio File Name}}
 
-{{^Story* / Subtitle 1}}
-    <div id="type-control" class="panel" style="display: none; margin: 0 10px;">{{type:Front}}</div>
-{{/Story* / Subtitle 1}}
+{{^Audio File Name}}
+    {{#Story* / Subtitle 1}}<div class="large padding">{{Front}}</div>{{/Story* / Subtitle 1}}
+{{/Audio File Name}}
+
 </div>
 
 {{#Tags}}<div class="tags xsmall text-grey">{{Tags}}</div>{{/Tags}}
@@ -41,14 +54,15 @@
 <!-- Font Awesome Free's Cheatsheet: https://fontawesome.com/cheatsheet (load all styles) -->
 <script src="_fontawesome-all.js"></script>
 <script>
+
 function toggleFront() {
-  var x = document.getElementById("front");
+  var x = document.getElementById("frontPanel");
   if (x.style.display === "none") {
     x.style.display = "block";
   } else {
     x.style.display = "none";
   }
-  var x = document.getElementById("front2");
+  var x = document.getElementById("frontPanel2");
   if (x.style.display === "block") {
     x.style.display = "none";
   } else {
@@ -57,7 +71,7 @@ function toggleFront() {
 }
 
 function toggleAudio() {
-  var x = document.getElementById("audio-control");
+  var x = document.getElementById("audioPanel");
   if (x.style.display === "none") {
     x.style.display = "block";
   } else {
@@ -66,7 +80,7 @@ function toggleAudio() {
 }
 
 function toggleType() {
-  var x = document.getElementById("type-control");
+  var x = document.getElementById("typePanel");
   if (x.style.display === "none") {
     x.style.display = "block";
   } else {
@@ -74,29 +88,19 @@ function toggleType() {
   }
 }
 
-function toggleNotes() {
-  var x = document.getElementById("notes");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
+window.onload = function() {
 
-window.onscroll = function() {
-  stickyFunction()
+  var v = document.getElementById("audioControl");
+  var p = document.getElementById("pbr");
+  var c = document.getElementById("currentPbr");
+
+  p.addEventListener('input', function() {
+    c.innerHTML = p.value;
+    v.playbackRate = p.value;
+  }, false);
+
 };
 
-var header = document.getElementById("stickyHeader");
-//var sticky = header.offsetTop;
-
-function stickyFunction() {
-  if (window.pageYOffset > sticky) {
-    header.classList.add("sticky");
-  } else {
-    header.classList.remove("sticky");
-  }
-}
 </script>
 {{/Video File Name*}}
 
