@@ -17,7 +17,7 @@
 {{/Story* / Subtitle 1}}
 
 {{#Audio File Name}}
-    <div id="stickyHeader" class="panel">
+    <div {{#Story* / Subtitle 1}}id="stickyHeader"{{/Story* / Subtitle 1}} class="panel">
         <div id="audioPanel" {{^Story* / Subtitle 1}}style="display: none;"{{/Story* / Subtitle 1}}>
             {{#Story* / Subtitle 1}}<div class="large padding">{{Front}}</div>{{/Story* / Subtitle 1}}
             <audio id="audioControl" controls loop class="small text-grenadine">
@@ -127,7 +127,7 @@ function toggleNotes() {
   }
 }
 
-{{#Audio File Name}}
+{{#Audio File Name}}{{#Story* / Subtitle 1}}
 window.onscroll = function () {
   stickyFunction()
 };
@@ -142,7 +142,7 @@ function stickyFunction() {
     header.classList.remove("sticky");
   }
 }
-{{/Audio File Name}}
+{{/Story* / Subtitle 1}}{{/Audio File Name}}
 
 </script>
 {{/Video File Name*}}
