@@ -60,10 +60,10 @@ figure img {
     padding: 0;
 }
 
-img {
+.img {
     height: 160px;
     margin: 0;
-    padding: 6px 0 0 0;
+    padding: 0;
 }
 
 .newline br {
