@@ -2,7 +2,7 @@
 
 Template and style of Anki cards.
 
-![Multifunctional Card](https://raw.githubusercontent.com/Ber-Fer/AnkiCard/master/screenshot.gif)
+![Multi Card](https://raw.githubusercontent.com/Ber-Fer/AnkiCard/master/screenshot.gif)
 
 ## Fields
 
