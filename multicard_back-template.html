@@ -1,5 +1,5 @@
 {{^Video File Name*}}
-
+<script src="_fontawesome-all.js"></script>
 {{^Story* / Subtitle 1}}
     <div style="display: none">== {{Back}} ==</div> <!-- Display only in the card browser list -->
 
@@ -20,7 +20,7 @@
 
 {{#Picture}}
     {{#Story* / Subtitle 1}}<figure class="panel">{{Picture}}</figure>{{/Story* / Subtitle 1}}
-    {{^Story* / Subtitle 1}}<div class="img panel">{{Picture}}</div>{{/Story* / Subtitle 1}}
+    {{^Story* / Subtitle 1}}<div class="contain panel">{{Picture}}</div>{{/Story* / Subtitle 1}}
 {{/Picture}}
 
 {{^Story* / Subtitle 1}}
@@ -74,8 +74,8 @@
     <div class="tags xsmall text-grey">{{Tags}}</div>
 {{/Tags}}
 
-<!-- Font Awesome Free's Cheatsheet: https://fontawesome.com/cheatsheet (load all styles) -->
-<script src="_fontawesome-all.js"></script>
+<!-- Font Awesome Free's Cheatsheet: https://fontawesome.com/cheatsheet (load all styles)
+<script src="_fontawesome-all.js"></script> -->
 <script>
 
 function toggleFront() {

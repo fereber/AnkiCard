@@ -60,10 +60,13 @@ figure img {
     padding: 0;
 }
 
-.img {
-    height: 160px;
-    margin: 0;
-    padding: 0;
+.contain img {
+    object-fit: contain;
+}
+
+img {
+    height: 120px;
+    width: auto;
 }
 
 .newline br {
