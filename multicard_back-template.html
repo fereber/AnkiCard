@@ -38,7 +38,6 @@
             {{#Story* / Subtitle 1}}<div class="large padding">{{Front}}</div>{{/Story* / Subtitle 1}}
             <audio id="audioControl" controls loop class="small text-grenadine">
                 <source src="{{Audio File Name}}">
-                Your browser does not support the audio element.
             </audio>
             <form>
                 <div class="range-slider small text-grey left">
@@ -155,9 +154,7 @@ function stickyFunction() {
 
 {{#Video File Name*}}
 <div class="center">
-    <video controls preload="metadata" src="{{Video File Name*}}" class="small text-grenadine">
-        Your browser does not support the video element.
-    </video>
+    <video controls preload="metadata" src="{{Video File Name*}}" class="small text-grenadine"></video>
     <div class="small">{{Front}}</div>
 </div>
 
