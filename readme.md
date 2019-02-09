@@ -24,7 +24,6 @@ Easy-to-read cards with toggle switch fields (show/hide).
 | Picture         | optional; `<img src="story_audio_file.jpg" />` |
 | Sound           | optional; `[sound:story_audio_file.mp3]`       |
 | Audio File Name | optional; `story_audio_file.mp3`               |
-| Story\*         | _leave blank!_                                 |
 | Notes           | optional;                                      |
 
 The following fields are available to show/hide content:
