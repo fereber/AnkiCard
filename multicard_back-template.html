@@ -1,56 +1,41 @@
 <script src="_fontawesome-all.js"></script>
-{{^Story* / Subtitle 1}}
-    <div style="display: none">== {{Back}} ==</div> <!-- Display only in the card browser list -->
 
-    <div class="icon-bar">
-        {{#Sound}}{{Sound}}{{/Sound}}
-        {{#Sound}}<a title="Spell Checking" href="#" onclick="toggleType()"><i class="far fa-check-circle"></i></a>{{/Sound}}
-        {{#Audio File Name}}<a title="Show Audio Player" href="#" onclick="toggleAudio()"><i class="fas fa-volume-up"></i></a>{{/Audio File Name}}
-        {{#Sound}}<a title="Show Content of Front Side" href="#" onclick="toggleFront()"><i class="far fa-comment-dots"></i></a>{{/Sound}}
-        {{#Notes}}<a title="See More Info" href="#" onclick="toggleNotes()"><i class="far fa-question-circle"></i></a>{{/Notes}}
-    </div>
-{{/Story* / Subtitle 1}}
+  <div style="display: none">== {{Back}} ==</div> <!-- Display only in the card browser list -->
 
-{{#Story* / Subtitle 1}}
-    <div style="display: none">== {{Story* / Subtitle 1}} ==</div> <!-- Display only in the card browser list -->
-{{/Story* / Subtitle 1}}
+  <div class="icon-bar">
+      {{#Sound}}{{Sound}}{{/Sound}}
+      {{#Sound}}<a title="Spell Checking" href="#" onclick="toggleType()"><i class="far fa-check-circle"></i></a>{{/Sound}}
+      {{#Audio File Name}}<a title="Show Audio Player" href="#" onclick="toggleAudio()"><i class="fas fa-volume-up"></i></a>{{/Audio File Name}}
+      {{#Sound}}<a title="Show Content of Front Side" href="#" onclick="toggleFront()"><i class="far fa-comment-dots"></i></a>{{/Sound}}
+      {{#Notes}}<a title="See More Info" href="#" onclick="toggleNotes()"><i class="far fa-question-circle"></i></a>{{/Notes}}
+  </div>
 
-<div class="container center" style="max-width: 100%; {{^Story* / Subtitle 1}}margin: auto 20px;{{/Story* / Subtitle 1}}">
+<div class="container center" style="max-width: 100%; margin: auto 20px;">
 
 {{#Picture}}
-    {{#Story* / Subtitle 1}}<figure class="panel">{{Picture}}</figure>{{/Story* / Subtitle 1}}
-    {{^Story* / Subtitle 1}}<div class="contain panel">{{Picture}}</div>{{/Story* / Subtitle 1}}
+    <div class="contain panel">{{Picture}}</div>
 {{/Picture}}
 
-{{^Story* / Subtitle 1}}
-    <div class="large panel" {{#Sound}}id="frontPanel" style="display:none"{{/Sound}}>{{Front}}</div>
-    {{#Sound}}<div class="large panel" id="frontPanel2" style="display: block;"><i class="fa fa-ellipsis-h"></i></div>{{/Sound}}
-{{/Story* / Subtitle 1}}
+  <div class="large panel" {{#Sound}}id="frontPanel" style="display:none"{{/Sound}}>{{Front}}</div>
+  {{#Sound}}<div class="large panel" id="frontPanel2" style="display: block;"><i class="fa fa-ellipsis-h"></i></div>{{/Sound}}
 
-{{^Story* / Subtitle 1}}
-    <div id="typePanel" class="panel" style="display: none;">{{type:Front}}</div>
-{{/Story* / Subtitle 1}}
+  <div id="typePanel" class="panel" style="display: none;">{{type:Front}}</div>
 
-{{#Audio File Name}}
-    <div {{#Story* / Subtitle 1}}id="stickyHeader"{{/Story* / Subtitle 1}} class="panel">
-        <div id="audioPanel" {{^Story* / Subtitle 1}}style="display: none;"{{/Story* / Subtitle 1}}>
-            {{#Story* / Subtitle 1}}<div class="large padding">{{Front}}</div>{{/Story* / Subtitle 1}}
-            <audio id="audioControl" controls loop class="small text-grenadine">
-                <source src="{{Audio File Name}}">
-            </audio>
-            <form>
-                <div class="range-slider small text-grey left">
-                    <input id="pbr" class="range-slider__range" type="range" value="1" min="0.1" max="2" step="0.1" >
-                    <span class="range-slider__value">Speed: <span id="currentPbr">1</span></span>
-                </div>
-            </form>
-        </div>
-    </div>
-{{/Audio File Name}}
-
-{{^Audio File Name}}
-    {{#Story* / Subtitle 1}}<div class="large padding">{{Front}}</div>{{/Story* / Subtitle 1}}
-{{/Audio File Name}}
+  {{#Audio File Name}}
+      <div class="panel">
+          <div id="audioPanel" style="display: none;">
+              <audio id="audioControl" controls loop class="small text-grenadine">
+                  <source src="{{Audio File Name}}">
+              </audio>
+              <form>
+                  <div class="range-slider small text-grey left">
+                      <input id="pbr" class="range-slider__range" type="range" value="1" min="0.1" max="2" step="0.1" >
+                      <span class="range-slider__value">Speed: <span id="currentPbr">1</span></span>
+                  </div>
+              </form>
+          </div>
+      </div>
+  {{/Audio File Name}}
 
     <hr class="text-grey">
 
@@ -58,24 +43,15 @@
     <div class="large panel">{{Back}}</div>
 {{/Back}}
 
-{{#Story* / Subtitle 1}}
-    <div class="panel left newline">{{Story* / Subtitle 1}}</div>
-{{/Story* / Subtitle 1}}
-
 {{#Notes}}
-    <div {{^Story* / Subtitle 1}}id="notesPanel"{{/Story* / Subtitle 1}} class="panel left newline padding round small grey" style="{{^Story* / Subtitle 1}}display: none;{{/Story* / Subtitle 1}}">{{Notes}}</div>
+    <div {{^Story*}}id="notesPanel"{{/Story*}} class="panel left newline padding round small grey" style="display: none;">{{Notes}}</div>
 {{/Notes}}
 
 </div>
 
-{{#Tags}}
-    <div class="tags xsmall text-grey">{{Tags}}</div>
-{{/Tags}}
+{{#Tags}}<div class="tags xsmall text-grey">{{Tags}}</div>{{/Tags}}
 
-<!-- Font Awesome Free's Cheatsheet: https://fontawesome.com/cheatsheet (load all styles)
-<script src="_fontawesome-all.js"></script> -->
 <script>
-
 function toggleFront() {
   var x = document.getElementById("frontPanel");
   if (x.style.display === "none") {
@@ -130,22 +106,4 @@ function toggleNotes() {
     x.style.display = "none";
   }
 }
-
-{{#Audio File Name}}{{#Story* / Subtitle 1}}
-window.onscroll = function () {
-  stickyFunction()
-};
-
-var header = document.getElementById("stickyHeader");
-var sticky = header.offsetTop;
-
-function stickyFunction() {
-  if (window.pageYOffset > sticky) {
-    header.classList.add("sticky");
-  } else {
-    header.classList.remove("sticky");
-  }
-}
-{{/Story* / Subtitle 1}}{{/Audio File Name}}
-
 </script>

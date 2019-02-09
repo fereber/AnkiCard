@@ -1,35 +1,27 @@
 <script src="_fontawesome-all.js"></script>
 <div style="display: none">== {{Front}} ==</div> <!-- Display only in the card browser list -->
 
-{{^Story* / Subtitle 1}}
-    <div class="icon-bar">
-        {{#Sound}}{{Sound}}{{/Sound}}
-        {{#Sound}}<a title="Spell Checking" href="#" onclick="toggleType()"><i class="far fa-check-circle"></i></a>{{/Sound}}
-        {{#Audio File Name}}<a title="Show Audio Player" href="#" onclick="toggleAudio()"><i class="fas fa-volume-up"></i></a>{{/Audio File Name}}
-        {{#Sound}}<a  title="Show Content of Front Side" href="#" onclick="toggleFront()"><i class="far fa-comment-dots"></i></a>{{/Sound}}
-    </div>
-{{/Story* / Subtitle 1}}
+  <div class="icon-bar">
+      {{#Sound}}{{Sound}}{{/Sound}}
+      {{#Sound}}<a title="Spell Checking" href="#" onclick="toggleType()"><i class="far fa-check-circle"></i></a>{{/Sound}}
+      {{#Audio File Name}}<a title="Show Audio Player" href="#" onclick="toggleAudio()"><i class="fas fa-volume-up"></i></a>{{/Audio File Name}}
+      {{#Sound}}<a  title="Show Content of Front Side" href="#" onclick="toggleFront()"><i class="far fa-comment-dots"></i></a>{{/Sound}}
+  </div>
 
-<div class="container center" style="max-width: 100%; {{^Story* / Subtitle 1}}margin: auto 20px;{{/Story* / Subtitle 1}}">
+<div class="container center" style="max-width: 100%; margin: auto 20px;">
 
 {{#Picture}}
-    {{#Story* / Subtitle 1}}<figure class="panel">{{Picture}}</figure>{{/Story* / Subtitle 1}}
-    {{^Story* / Subtitle 1}}<div class="contain panel">{{Picture}}</div>{{/Story* / Subtitle 1}}
+  <div class="contain panel">{{Picture}}</div>
 {{/Picture}}
 
-{{^Story* / Subtitle 1}}
-    <div class="large panel" {{#Sound}}id="frontPanel" style="display:none"{{/Sound}}>{{Front}}</div>
-    {{#Sound}}<div class="large panel" id="frontPanel2" style="display: block;"><i class="fa fa-ellipsis-h"></i></div>{{/Sound}}
-{{/Story* / Subtitle 1}}
+  <div class="large panel" {{#Sound}}id="frontPanel" style="display:none"{{/Sound}}>{{Front}}</div>
+  {{#Sound}}<div class="large panel" id="frontPanel2" style="display: block;"><i class="fa fa-ellipsis-h"></i></div>{{/Sound}}
 
-{{^Story* / Subtitle 1}}
-    <div id="typePanel" class="panel" style="display: none;">{{type:Front}}</div>
-{{/Story* / Subtitle 1}}
+  <div id="typePanel" class="panel" style="display: none;">{{type:Front}}</div>
 
 {{#Audio File Name}}
     <div class="panel">
-        <div id="audioPanel" {{^Story* / Subtitle 1}}style="display: none;"{{/Story* / Subtitle 1}}>
-            {{#Story* / Subtitle 1}}<div class="large padding">{{Front}}</div>{{/Story* / Subtitle 1}}
+        <div id="audioPanel" style="display: none;">
             <audio id="audioControl" controls loop class="small text-grenadine">
                 <source src="{{Audio File Name}}">
             </audio>
@@ -43,18 +35,11 @@
     </div>
 {{/Audio File Name}}
 
-{{^Audio File Name}}
-    {{#Story* / Subtitle 1}}<div class="large padding">{{Front}}</div>{{/Story* / Subtitle 1}}
-{{/Audio File Name}}
-
 </div>
 
 {{#Tags}}<div class="tags xsmall text-grey">{{Tags}}</div>{{/Tags}}
 
-<!-- Font Awesome Free's Cheatsheet: https://fontawesome.com/cheatsheet (load all styles)
-<script src="_fontawesome-all.js"></script> -->
 <script>
-
 function toggleFront() {
   var x = document.getElementById("frontPanel");
   if (x.style.display === "none") {
@@ -100,5 +85,4 @@ window.onload = function() {
   }, false);
 
 };
-
 </script>
