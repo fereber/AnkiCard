@@ -17,14 +17,14 @@ Template and style of Anki cards.
 
 Easy-to-read cards with toggle switch fields (show/hide).
 
-| Field           | Comment                                        |
-| --------------- | ---------------------------------------------- |
-| **Front**       | **expression here; sort by this field**        |
-| **Back**        | **expression translation**                     |
-| Picture         | optional; `<img src="story_audio_file.jpg" />` |
-| Sound           | optional; `[sound:story_audio_file.mp3]`       |
-| Audio File Name | optional; `story_audio_file.mp3`               |
-| Notes           | optional;                                      |
+| Field           | Comment                                       |
+| --------------- | --------------------------------------------- |
+| **Front**       | **expression here; sort by this field**       |
+| **Back**        | **expression translation**                    |
+| Picture         | optional; `<img src="picture.jpg" />`         |
+| Sound           | optional; `[sound:expression_audio_file.mp3]` |
+| Audio File Name | optional; `expression_audio_file.mp3`         |
+| Notes           | optional;                                     |
 
 The following fields are available to show/hide content:
 
