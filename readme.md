@@ -2,8 +2,6 @@
 
 Template and style of Anki cards.
 
-![Multi Card](https://raw.githubusercontent.com/Ber-Fer/AnkiCard/master/screenshot.gif)
-
 ## Fields
 
 1.  Front (Sort by this field in browser)
@@ -32,5 +30,3 @@ The following fields are available to show/hide content:
 -   Front Type  (to check if you are correct)
 -   Audio File Name (to replay the audio with **adjustable playback speed** range - set audio to play in slow motion)
 -   Notes (show your comments)
-
-**Note:** Playing audio files (this way) are only supported with AnkiDroid.
