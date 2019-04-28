@@ -2,9 +2,9 @@
 
   <div class="icon-bar">
     {{#Sound}}{{Sound}}{{/Sound}}
-    {{#Sound}}<a title="Spell Checking" href="#" onclick="toggleType(); return false;"><svg width="30" height="30"><use xlink:href="#check-circle" /></svg></a>{{/Sound}}
-    {{#Audio File Name}}<a title="Show Audio Player" href="#" onclick="toggleAudio(); return false;"><svg width="30" height="30"><use xlink:href="#volume-up" /></svg></a>{{/Audio File Name}}
-    {{#Sound}}<a  title="Show Content of Front Side" href="#" onclick="toggleFront(); return false;"><svg width="30" height="30"><use xlink:href="#comment-dots" /></svg></a>{{/Sound}}
+    {{#Sound}}<a title="Spell Checking" href="#" onclick="toggleType(); return false;"><svg width="25" height="25"><use xlink:href="#check-circle" /></svg></a>{{/Sound}}
+    {{#Audio File Name}}<a title="Show Audio Player" href="#" onclick="toggleAudio(); return false;"><svg width="25" height="25"><use xlink:href="#volume-up" /></svg></a>{{/Audio File Name}}
+    {{#Sound}}<a  title="Show Content of Front Side" href="#" onclick="toggleFront(); return false;"><svg width="25" height="25"><use xlink:href="#comment-dots" /></svg></a>{{/Sound}}
   </div>
 
 <div class="container center" style="max-width: 100%; margin: auto 20px;">
@@ -14,7 +14,7 @@
 {{/Picture}}
 
   <div class="large panel" {{#Sound}}id="frontPanel" style="display:none"{{/Sound}}>{{Front}}</div>
-  {{#Sound}}<div class="large panel" id="frontPanel2" style="display: block;"><svg width="30" height="30"><use xlink:href="#ellipsis-h" /></svg></div>{{/Sound}}
+  {{#Sound}}<div class="large panel" id="frontPanel2" style="display: block;"><svg width="20" height="20"><use xlink:href="#ellipsis-h" /></svg></div>{{/Sound}}
 
   <div id="typePanel" class="panel" style="display: none;">{{type:Front}}</div>
 
